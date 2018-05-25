@@ -5,6 +5,7 @@
     <%
     	Board b = (Board)request.getAttribute("selectBoard");
     	String arr[] = b.getTinfo().split("/");
+    	
     %>
 <!DOCTYPE html>
 <html>
@@ -51,7 +52,7 @@ span#fname{
 	<input type="button" value="목록" onclick='fn_list()'/>
 	<script>
 		function fn_list(){
-			location.href = "<%=request.getContextPath()%>/board/boardView";
+			location.href = ${request.contextPath}+"/board/boardView";
 		}
 	</script>
 	<form action="<%=request.getContextPath() %>/board/boardEnroll" method="post" enctype="multipart/form-data">
